@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- Splash Screen -->
+    <template id="splash-template">
+        <div id="splash-screen" class="splash-screen">
+            <div class="splash-content">
+                <img src="Screenshot 2025-11-12 113319.png" alt="Hostel Logo" class="splash-logo">
+                <h1 class="splash-title">Hostel Management System</h1>
+            </div>
+        </div>
+    </template>
+
+    <!-- Welcome Page -->
+    <template id="welcome-template">
+        <div class="container">
+            <header class="main-header">
+                <a href="#home" class="logo">Aliah Hostel</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#public">Rooms</a></li>
+                        <li><a href="#notices">Notices</a></li>
+                        <li><a href="#admin">Admin</a></li>
+                        <li><a href="#student">Student</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section class="hero">
+                    <h2>Welcome to Your Aliah Hostel</h2>
+                    <p>Comfort, community, and convenience, all in one place.</p>
+                </section>
+                <section id="hostel-photos" class="card">
+                    <h3>Our Hostel</h3>
+                    <div class="photo-grid">
+                        <img src="assets/hostelimg.jpeg" alt="Hostel Photo 1">
+                        <img src="assets/hsotel.jpg" alt="Hostel Photo 2">
+                        <img src="assets/HOs.jpeg" alt="Hostel Photo 3">
+                    </div>
+                </section>
+                 <section id="about-hostel" class="card">
+                    <h3>About the Hostel</h3>
+                    <p>Our hostel is equipped with modern amenities to ensure a comfortable stay for our residents. We have a dedicated team to manage the facilities and address any concerns. We strive to provide a conducive environment for learning and personal growth.</p>
+                </section>
+            </main>
+            <footer class="main-footer">
+                <p>&copy; 2025 Aliah Hostel. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </template>
+
+    <!-- Notices Page -->
+    <template id="notices-template">
+        <div class="container">
+             <header class="main-header">
+                <a href="#home" class="logo">Aliah Hostel</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#public">Rooms</a></li>
+                        <li><a href="#notices" class="active">Notices</a></li>
+                        <li><a href="#admin">Admin</a></li>
+                        <li><a href="#student">Student</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="card">
+                    <h2>Public Notices</h2>
+                    <div id="public-notices-container" class="notices-grid">
+                        <!-- Notices will be rendered here by JS -->
+                    </div>
+                </div>
+            </main>
+            <footer class="main-footer">
+                <p>&copy; 2025 Aliah Hostel. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </template>
+
+    <!-- Admin Login -->
+    <template id="admin-login-template">
+        <div class="login-container">
+            <form id="admin-login-form" class="login-form">
+                <h2>Admin Login</h2>
+                <div class="form-group">
+                    <label for="admin-username">Username</label>
+                    <input type="text" id="admin-username" required value="ashif">
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" required value="ashif123">
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <p class="error-message"></p>
+            </form>
+        </div>
+    </template>
+
+    <!-- Admin Dashboard -->
+    <template id="admin-dashboard-template">
+        <div class="dashboard">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="#home" class="logo">Aliah Hostel</a>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#admin/dashboard">Dashboard</a></li>
+                        <li><a href="#admin/allotment">Student & Allotment</a></li>
+                        <li><a href="#admin/requests">Room Requests</a></li>
+                        <li><a href="#admin/invoices">Invoices</a></li>
+                        <li><a href="#admin/notices">Notices</a></li>
+                        <li><a href="#admin/complaints">Complaints</a></li>
+                        <li><a href="#admin/fees">Fee Management</a></li>
+                    </ul>
+                </nav>
+                 <div class="sidebar-footer">
+                    <a href="#" id="admin-logout" class="btn btn-danger">Logout</a>
+                </div>
+            </aside>
+            <main class="main-content">
+                <!-- Admin content will be rendered here -->
+            </main>
+        </div>
+    </template>
+
+    <!-- Student Login -->
+    <template id="student-login-template">
+        <div class="login-container">
+            <form id="student-login-form" class="login-form">
+                <h2>Student Login</h2>
+                <div class="form-group">
+                    <label for="student-allotment-id">Allotment ID</label>
+                    <input type="text" id="student-allotment-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-room-no">Password (Room No)</label>
+                    <input type="password" id="student-room-no" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <p class="error-message"></p>
+            </form>
+        </div>
+    </template>
+
+    <!-- Student Dashboard -->
+    <template id="student-dashboard-template">
+        <div class="dashboard">
+            <aside class="sidebar">
+                 <div class="sidebar-header">
+                    <a href="#home" class="logo">Aliah Hostel</a>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#student/dashboard">My Dashboard</a></li>
+                        <li><a href="#student/complaint">New Complaint</a></li>
+                        <li><a href="#student/complaints">Complaint History</a></li>
+                        <li><a href="#student/room-change">Request Room Change</a></li>
+                        <li><a href="#student/my-requests">My Room Requests</a></li>
+                        <li><a href="#student/fees">Fee Status</a></li>
+                    </ul>
+                </nav>
+                <div class="sidebar-footer">
+                    <a href="#" id="student-logout" class="btn btn-danger">Logout</a>
+                </div>
+            </aside>
+            <main class="main-content">
+                <!-- Student content will be rendered here -->
+            </main>
+        </div>
+    </template>
+
+    <!-- Public Page -->
+    <template id="public-template">
+        <div class="container">
+             <header class="main-header">
+                <a href="#home" class="logo">Aliah Hostel</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#public" class="active">Rooms</a></li>
+                        <li><a href="#admin">Admin</a></li>
+                        <li><a href="#student">Student</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="card">
+                    <h2>Room Availability Matrix</h2>
+                    <p>Click on a room to see its details. Green rooms are vacant, yellow are partially occupied, and red are full.</p>
+                    <div id="room-grid-container" class="room-grid">
+                        <!-- Room grid will be rendered here by JS -->
+                    </div>
+                </div>
+            </main>
+            <footer class="main-footer">
+                <p>&copy; 2025 Aliah Hostel. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </template>
+
+    <!-- Modal for Room Details -->
+    <div id="room-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-room-number">Room Details</h3>
+                <button id="modal-close-btn" class="modal-close">&times;</button>
+            </div>
+            <div id="modal-room-details">
+                <!-- Details will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
