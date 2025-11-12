@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="receipt-header"><h1>Aliah Hostel</h1><p>Your Home Away From Home</p></div>
                 <h2 class="notice-title">${notice.title}</h2><p class="notice-date">Published on: ${new Date(notice.date).toLocaleDateString()}</p>
                 <div class="notice-body"><p>${notice.body.replace(/\n/g, '<br>')}</p></div>
-                <img src="assets/logo.jpeg" alt="Hostel Stamp" class="stamp">
+                <img src="logo.jpeg" alt="Hostel Stamp" class="stamp">
                 <div class="footer"><p>This is an official notice from the hostel administration.</p><p>&copy; ${new Date().getFullYear()} Aliah Hostel</p></div>
             </div>
             <script>setTimeout(() => { window.print(); window.close(); }, 500);</script>
